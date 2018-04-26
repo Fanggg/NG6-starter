@@ -1,7 +1,24 @@
 @import "common/common";
+@import "../../node_modules/angular-material/angular-material.css";
+@import "../../node_modules/angular-jk-carousel/dist/jk-carousel.css";
+@import "../../node_modules/angular-toastr/dist/angular-toastr.css";
+@import "../../node_modules/angular-carousel/dist/angular-carousel.css";
 
 .app {
   height: 100%;
-  background-color: $lightBgColor;
+
 }
+
+
+  md-progress-linear {
+  border-color: rgba(0,150,136,0.87);
+  }
+
+md-tabs {
+  md-ink-bar {
+    color: black ;
+    background: rgba(0,150,136,0.87);
+  }
+}
+
 

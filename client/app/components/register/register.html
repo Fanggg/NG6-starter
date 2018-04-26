@@ -1,0 +1,38 @@
+<navbar></navbar>
+
+<div ng-controller="registerCtrl as ctrl" ng-init="ctrl.start">
+    <form flex="100" layout="column">
+        <div>
+          <br>
+          <h1 align="center">注册信息</h1>
+          <hr class="hr">
+        </div>
+        <div>
+            <md-card md-theme-watch>
+                <md-card-title>
+                  <md-card-title-text flex="80">
+                      <md-input-container class="md-block">
+                          <label>名称</label>
+                          <input ng-model="ctrl.name_is" required>
+                      </md-input-container>
+                      <md-input-container class="md-block">
+                          <label>账号</label>
+                          <input ng-model="ctrl.name" required>
+                      </md-input-container>
+                      <md-input-container class="md-block">
+                          <label>密码</label>
+                          <input ng-model="ctrl.password" required ng-click="ctrl.verify()">
+                      </md-input-container>
+                  </md-card-title-text>
+                  <md-card-title-media>
+                    <md-button ng-click="ctrl.repetitionExamine()">验证账号是否存在</md-button>
+                  </md-card-title-media>
+                </md-card-title>
+                <md-card-actions>
+                  <md-button ng-click="ctrl.confirm()">提交</md-button>
+                </md-card-actions>
+              </md-card>
+        </div>
+
+      </form>
+</div>

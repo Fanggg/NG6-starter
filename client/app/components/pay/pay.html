@@ -1,0 +1,35 @@
+<navbar></navbar>
+<div ng-controller="payCtrl as ctrl">
+    <form flex="100" layout="column">
+        <div>
+          <br>
+          <h1 style="padding:5px">购物车</h1>
+          <hr class="hr">
+        </div>
+        <div>
+              <md-card md-theme-watch>
+                <md-card-title>
+                  <md-card-title-text flex="80">
+                      <md-input-container class="md-block">
+                          <label>出行方式</label>
+                          <input ng-model="ctrl.name_is" required>
+                      </md-input-container>
+                      <md-input-container class="md-block">
+                          <label>门票价格</label>
+                          <input ng-model="ctrl.name" required>
+                      </md-input-container>
+                  </md-card-title-text>
+                  <md-card-title-media>
+                  </md-card-title-media>
+                </md-card-title>
+                <md-card-actions>
+                </md-card-actions>
+              </md-card>
+        </div>
+        <md-button ng-click="">结算</md-button>
+
+      </form>
+  <div>
+
+  </div>
+</div>

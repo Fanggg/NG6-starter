@@ -1,0 +1,46 @@
+<md-dialog aria-label="Mango (Fruit)">
+    <form>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>用户详情</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="ctrl.$mdDialog.cancel()">
+            <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+      <md-dialog-content style="max-width:800px;max-height:810px;">
+        <br>
+        <md-input-container class="md-block">
+            <label>名称</label>
+            <input ng-model="ctrl.userdata.message.name_is" ng-disabled="true">
+          </md-input-container>
+          <md-input-container class="md-block">
+              <label>账号</label>
+              <input ng-model="ctrl.userdata.message.name" ng-disabled="true">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>密码</label>
+                <input ng-model="ctrl.userdata.message.password" ng-disabled="true" type="{{ctrl.type}}">
+              </md-input-container>
+              <md-button ng-click="ctrl.showChange()" ng-if="ctrl.userdata.is_admin_user == true">👀</md-button>
+              <md-input-container class="md-block">
+                  <label>权限:管理员</label>
+                  <md-switch ng-model="ctrl.userdata.is_admin_user" class="md-primary" ng-disabled="ctrl.userdata.is_superuser == false"></md-switch>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>权限:超级管理员</label>
+                    <md-switch ng-model="ctrl.userdata.is_superuser" class="md-primary" ng-disabled="true">
+                      </md-switch>
+                    <!-- <input ng-model="ctrl.userdata.is_superuser" ng-disabled="true"> -->
+                  </md-input-container>
+      </md-dialog-content>
+
+      <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="ctrl.confirm()" style="margin-right:20px;" >
+          登出
+        </md-button>
+      </md-dialog-actions>
+    </form>
+  </md-dialog>

@@ -1,0 +1,33 @@
+<md-dialog aria-label="Mango (Fruit)">
+    <form>
+      <md-toolbar>
+        <div class="md-toolbar-tools" style="background:forestgreen">
+          <h2>登入</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="ctrl.$mdDialog.cancel()">
+            <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+      <md-dialog-content style="max-width:800px;max-height:810px;">
+        <br>
+          <md-input-container class="md-block">
+              <label>账号</label>
+              <input ng-model="ctrl.name">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>密码</label>
+                <input ng-model="ctrl.password" ng-keyup="ctrl.keyup($event)" type="{{ctrl.type}}">
+              </md-input-container>
+      </md-dialog-content>
+      <md-button ng-click="ctrl.showChange()">显示眼镜</md-button>
+
+      <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="ctrl.confirm()" style="margin-right:20px;" >
+          登入
+        </md-button>
+        <md-button ui-sref="register" ng-click="ctrl.$mdDialog.cancel()" target="_blank">注册</md-button>
+      </md-dialog-actions>
+    </form>
+  </md-dialog>

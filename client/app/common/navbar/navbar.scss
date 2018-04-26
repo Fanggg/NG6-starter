@@ -1,8 +1,9 @@
 @import '../common';
 
 .navbar {
-  height: 6.5rem;
-  background-color: $primaryColor;
+  background-color: $darkBgColor;
+  height: 3.5rem;
+
   padding: 1rem;
 
   .nav-links,
@@ -18,5 +19,11 @@
   .nav-links span {
     color: $lightTextColor;
     font-size: 1.6rem;
+  }
+
+  .title-head{
+    width: 60px;
+    color:ghostwhite;
+    background-color: rgb(143, 131, 131);
   }
 }

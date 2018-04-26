@@ -1,0 +1,21 @@
+<section class="search" ng-controller="searchCtrl as ctrl" >
+  <md-autocomplete
+  ng-disabled="ctrl.isDisabled"
+  md-no-cache="ctrl.noCache"
+  md-selected-item="ctrl.selectedItem"
+  md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+  md-search-text="ctrl.searchText"
+  md-selected-item-change="ctrl.selectedItemChange(item)"
+  md-items="item in ctrl.querySearch(ctrl.searchText)"
+  md-item-text="item.display"
+  md-min-length="0"
+  md-dropdown-position="bottom"
+  ng-keyup="ctrl.Keyup($event,ctrl.searchText)"
+  placeholder="输入您想搜索的目的地">
+<md-item-template>
+  <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+  <md-not-found>
+  <span style="color:darkgray"> 抱歉暂时没有"{{ctrl.searchText}}"的数据.</span>
+  </md-not-found>
+  </md-item-template>
+</section>

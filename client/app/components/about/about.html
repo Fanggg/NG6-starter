@@ -1,5 +1,40 @@
-<navbar></navbar>
-<h1>{{ $ctrl.name }}</h1>
-<section>
-  About us.
-</section>
+<div ng-controller="aboutCtrl as ctrl">
+  <md-tabs md-no-ink md-border-bottom	md-align-tabs="bottom" md-autoselect="true" md-dynamic-height class="md-primary md-hue-2" md-center-tabs>
+    <md-tab  ng-repeat="item in ctrl.data">
+        <md-tab-label>
+          <div>
+              <img src="{{item.img}}" style="width:50px;height:25px ;border:1px solid white;">
+          </div>
+        </md-tab-label>
+        <md-tab-body>
+          <div style="background:url({{item.img}});background-size:100% 100%;
+          background-repeat:no-repeat;width:100%;
+          height: 500px">
+          <div style="height:100%;width:300px; position: relative; left:100px; top:300px;">
+              <search></search>
+          </div>
+          </div>
+        </md-tab-body>
+    </md-tab>
+
+  </md-tabs>
+  <div layout="row">
+    <div flex="30" class="about">
+      <md-card>
+
+      </md-card>
+    </div>
+    <div flex="70">
+        <h1>热卖爆款</h1>
+        <hr class="hr">
+    </div>
+  </div>
+  <md-card>
+    <md-button ng-click="ctrl.automation()">加</md-button>
+    <md-button ng-click="ctrl.deltab()">剪</md-button>
+  </md-card>
+</div>
+
+
+
+
