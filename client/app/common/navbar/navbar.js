@@ -17,9 +17,11 @@ function navbarCtrl($mdDialog,toastr){
   'ngInject';
  var self = this;
  self.user = JSON.parse(localStorage.getItem("user"));
+ searchchoose();
  self.name = 'navbar'
  self.enter = enter
  self.userDatail = userDatail
+ self.state;
  self.organizations = [
   {
     region: '福建',
@@ -110,7 +112,7 @@ function navbarCtrl($mdDialog,toastr){
   }
 ];
 
-console.log(self.user,12312313123)
+
 
 
 //登入弹窗
@@ -133,7 +135,7 @@ console.log(self.user,12312313123)
   //用户详情
 
   function userDatail() {
-    console.log(13123123)
+
     $mdDialog.show({
       template: require("./common/userdetial/userdetial.html"),
       controller: userdetialCtrl,
@@ -146,6 +148,18 @@ console.log(self.user,12312313123)
     .then((e) => {
       self.user = JSON.parse(localStorage.getItem("user"));
     });
+  }
+
+  function searchchoose(){
+    let a = localStorage.getItem("mainstates");
+    if (a == 'about'){
+
+      self.state = false
+      localStorage.removeItem("mainstates")
+    }else{
+
+      self.state = true
+    }
   }
 }
 export default navbarModule;

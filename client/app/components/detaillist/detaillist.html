@@ -1,0 +1,73 @@
+<div ng-controller="detaillistCtrl as ctrl">
+    <md-list flex>
+    <md-subheader class="md-no-sticky">
+      <div layout="row">
+        <div flex="30">
+            近期热销
+        </div>
+        <div flex="60"></div>
+        <div flex="10" style="position: relative; bottom: 15px">
+            <md-button class="md-icon-button" ng-click="ctrl.refresh()">
+                <img src="http://fangggg.top/svg/baseline_refresh_black_48dp.png" style="width:24px">
+              </md-button>
+        </div>
+        </div>
+        <div ng-if="ctrl.ending" flex="30">
+            <details>
+                <summary>添加套餐</summary>
+                <md-card name="card">
+                    <md-input-container class="md-block">
+                        <label>套餐名称</label>
+                        <input ng-model="ctrl.list.name" required>
+                      </md-input-container>
+                      <md-input-container class="md-block">
+                          <label>套餐价格</label>
+                          <input ng-model="ctrl.list.pay" required type="number">
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>套餐人数</label>
+                            <input ng-model="ctrl.list.number" required type="number">
+                          </md-input-container>
+                          <md-input-container class="md-block">
+                              <label>套餐天数</label>
+                              <input ng-model="ctrl.list.day" required type="number">
+                            </md-input-container>
+                          <md-input-container class="md-block">
+                              <label>套餐图片链接</label>
+                              <input ng-model="ctrl.list.img" required>
+                            </md-input-container>
+                            <img src="{{ctrl.list.img}}">
+                            <md-input-container>
+                                <label>套餐属于区域</label>
+                                <md-select name="type" ng-model="ctrl.list.url" required>
+                                  <md-option value="wuyishan">武夷山</md-option>
+                                  <md-option value="fuzhou">福州</md-option>
+                                  <md-option value="xiamen">厦门</md-option>
+                                </md-select>
+                              </md-input-container>
+                  <md-button class="md-raised md-primary" ng-click="ctrl.addlist()">提交审核</md-button>
+                </md-card>
+              </details>
+        </div>
+    </md-subheader>
+
+    <md-list-item class="md-3-line" ng-repeat="list in ctrl.list" ng-click="ctrl.payDetail()">
+      <a ng-click="ctrl.payDetail()">
+        <img ng-src="{{list.img}}" class="md-avatar" alt="{{item.who}}"/>
+      </a>
+      <div class="md-list-item-text" layout="column">
+        <h3>{{ list.name }}</h3>
+        <div layout="row">
+            <p>天数:</p>
+            <p>{{ list.day }}天</p>
+        </div>
+        <div layout="row">
+            <p>价格:</p>
+            <br>
+            <p>{{ list.pay }}元</p>
+        </div>
+      </div>
+      <md-button ui-sref="{{list.url}}" class="md-raised md-primary">景区介绍</md-button>
+    </md-list-item>
+    </md-list>
+</div>

@@ -1,5 +1,5 @@
 class PayController {
-  constructor() {
+  constructor($scope) {
     this.name = 'pay';
     this.user = JSON.parse(localStorage.getItem("user"))
 

@@ -4,11 +4,11 @@
     <form flex="100" layout="column">
         <div>
           <br>
-          <h1 align="center">注册信息</h1>
-          <hr class="hr">
+          <h1 style="padding:5px">注册信息</h1>
+          <hr class="hr1">
         </div>
         <div>
-            <md-card md-theme-watch>
+            <md-card md-theme-watch style="width:800px">
                 <md-card-title>
                   <md-card-title-text flex="80">
                       <md-input-container class="md-block">
@@ -25,11 +25,11 @@
                       </md-input-container>
                   </md-card-title-text>
                   <md-card-title-media>
-                    <md-button ng-click="ctrl.repetitionExamine()">验证账号是否存在</md-button>
                   </md-card-title-media>
                 </md-card-title>
                 <md-card-actions>
                   <md-button ng-click="ctrl.confirm()">提交</md-button>
+                  <md-button ng-click="ctrl.repetitionExamine()">检测账号</md-button>
                 </md-card-actions>
               </md-card>
         </div>

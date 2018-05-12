@@ -10,6 +10,7 @@ export class enterCtrl{
     "ngInject"
     this.$mdDialog = $mdDialog;
     this.toastr = toastr;
+    this.change = false
     this.type = "password";
 
 
@@ -46,9 +47,11 @@ export class enterCtrl{
   showChange(){
     if(this.type == "password"){
       this.type = "text"
+      this.change = true
       console.log(111,this.type)
     }else{
       this.type = "password"
+      this.change =false
       console.log(222,this.type)
     }
   }

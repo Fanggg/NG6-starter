@@ -18,23 +18,52 @@
     </md-tab>
 
   </md-tabs>
+  <br>
   <div layout="row">
     <div flex="30" class="about">
       <md-card>
-
+        <md-tabs md-no-ink  md-autoselect="true" md-dynamic-height>
+          <md-tab ng-repeat="sid in ctrl.sidebar">
+              <md-tab-label>
+                <div style="width:80px">
+                  {{sid.name}}
+                </div>
+              </md-tab-label>
+              <md-tab-body>
+                  <div  align="center">
+                    <a ui-sref="{{sid.url}}"><img src="{{sid.img}}" style="height:200px ; width:380px;border:1px solid white;"></a>
+                  </div>
+                  <br>
+                  <hr class="hr1">
+                  <div  style="padding:15px">
+                    <h3 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:12px">{{sid.main}}</span>
+                  </div>
+                  <md-button ui-sref="{{sid.url}}" class="md-raised">查看详情</md-button>
+              </md-tab-body>
+          </md-tab>
+        </md-tabs>
       </md-card>
     </div>
-    <div flex="70">
+    <div flex="5"></div>
+    <div flex="65">
         <h1>热卖爆款</h1>
         <hr class="hr">
+        <div>
+          <md-card>
+            <detaillist></detaillist>
+          </md-card>
+        </div>
     </div>
   </div>
-  <md-card>
-    <md-button ng-click="ctrl.automation()">加</md-button>
-    <md-button ng-click="ctrl.deltab()">剪</md-button>
-  </md-card>
 </div>
-
+<div>
+</div>
+<details>
+  <summary>123123123</summary>
+  <md-card>
+   <wuyishan>
+  </md-card>
+</details>
 
 
 

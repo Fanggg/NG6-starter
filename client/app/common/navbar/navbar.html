@@ -1,20 +1,20 @@
 <nav class="navbar">
   <div flex="100" layout="row" ng-controller="navbarCtrl as ctrl">
       <div class="logo" flex="10">
-          <h1><a ui-sref="home">{{ ctrl.name }}</a></h1>
+          <a ui-sref="home"><img src="http://fangggg.top/Picture/head.png" style="width:120px"></a>
         </div>
         <div ng-if="!ctrl.user" flex="10">
             <a href=""  ng-click="ctrl.enter()"><img src="http://img.jf258.com/uploads/2014-09-25/082207464.jpg" style="border-radius: 50% ;width: 40px"></a>
         </div>
         <div ng-if="ctrl.user" flex="10">
-            <a href=""  ng-click="ctrl.userDatail()"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524118390270&di=69ff0f3368178971788c7e9b91d00062&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F728da9773912b31b903b272e8c18367adab4e166.jpg" style="border-radius: 50% ;width: 40px"></a>
+            <a href=""  ng-click="ctrl.userDatail()"><img src="{{ctrl.user.head}}" style="border-radius: 50% ;width: 40px;height:40px"></a>
             <!-- <span>{{ctrl.user.message.name_is}}</span> -->
         </div>
-        <div flex="40">
+        <div flex="40" ng-if="ctrl.state">
           <search></search>
         </div>
         <div class="nav-links" flex="40">
-          <span>
+          <span style=" position: relative;bottom: 5px;">
               <md-menu-bar>
                   <md-menu>
                     <md-button aria-label="Open menu" ng-click="$mdMenu.open($event)" class="title-head">
@@ -65,8 +65,7 @@
                   </md-menu> -->
                 </md-menu-bar>
           </span>
-          <span><a ui-sref="about">about</a></span>
-          <span></span>
+
         </div>
   </div>
 </nav>

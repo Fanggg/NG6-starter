@@ -15,8 +15,10 @@ export class userdetialCtrl{
     this.$mdDialog = $mdDialog;
     this.toastr = toastr;
     this.type = "password";
+    this.editing = false;
+    this.change = false;
     this.userdata = JSON.parse(localStorage.getItem("user"))
-    console.log(this.userdata)
+
   }
 
 
@@ -30,10 +32,21 @@ export class userdetialCtrl{
   showChange(){
     if(this.type == "password"){
       this.type = "text"
-      console.log(111,this.type)
+      this.change = true;
+
     }else{
       this.type = "password"
-      console.log(222,this.type)
+      this.change = false;
+
     }
+  }
+
+  addlist(){
+    let a =  JSON.parse(localStorage.getItem("data"))
+    a.list.push(this.list)
+    console.log(a.list)
+    localStorage.setItem("data",JSON.stringify(a))
+    this.toastr.success("添加成功，如需查看请刷新页面")
+    this.editing = false;
   }
 }

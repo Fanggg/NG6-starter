@@ -20,6 +20,7 @@ let payModule = angular.module('pay', [
 
 function payCtrl(){
   'ngInject';
+  
   var self = this;
   self.user = JSON.parse(localStorage.getItem("user"))
 }

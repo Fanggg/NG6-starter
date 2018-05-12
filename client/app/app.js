@@ -15,6 +15,7 @@ import 'angular-ui-bootstrap';
 import 'angular-touch';
 import 'angular-carousel'
 import 'normalize.css';
+import 'angular-material-data-table';
 
 
 
@@ -30,6 +31,7 @@ angular.module('app', [
     'angular-carousel',
     'ngSanitize',
     'ui.bootstrap',
+    'md.data.table',
     uiRouter,
     Common,
     Components,

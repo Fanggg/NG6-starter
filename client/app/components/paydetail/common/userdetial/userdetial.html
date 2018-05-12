@@ -1,0 +1,46 @@
+<md-dialog aria-label="Mango (Fruit)" style="width:900px;
+height:1200px">
+    <form>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>详细信息填写</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="ctrl.$mdDialog.cancel()">
+            <img src="http://fangggg.top/svg/ic_clear_white_48dp_2x.png" style="width:24px">
+          </md-button>
+        </div>
+      </md-toolbar>
+      <md-dialog-content>
+        <br>
+        <div layout="row">
+          <div flex="4"></div>
+          <div flex="55">
+              <md-input-container class="md-block">
+                  <label>请输入用户姓名</label>
+                  <input ng-model="ctrl.userdata.message.name_is" required>
+                </md-input-container>
+                <md-input-container class="md-block">
+                  <label>请输入联系方式(手机)</label>
+                  <input ng-model="ctrl.userdata.message.phone" type="text" required ng-pattern="'^[0-9]*[1-9][0-9]*$'">
+                </md-input-container>
+                <md-input-container class="md-block">
+                  <label>请输入身份证</label>
+                  <input ng-model="ctrl.userdata.message.idcard" type="text" required ng-pattern="'^[0-9]*[1-9][0-9]*$'">
+                </md-input-container>
+          </div>
+          <div flex="33"></div>
+        </div>
+            <div flex-gt-xs>
+              <h4 style="padding:5px">您准备的入住时间</h4>
+              <md-datepicker ng-model="ctrl.inDate" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
+            </div>
+      </md-dialog-content>
+
+      <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="ctrl.confirm()" style="margin-right:20px;" >
+          提交
+        </md-button>
+      </md-dialog-actions>
+    </form>
+  </md-dialog>

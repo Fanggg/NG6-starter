@@ -1,0 +1,46 @@
+<div ng-controller="paydetailCtrl as ctrl">
+  <navbar></navbar>
+  <div layout="row">
+    <md-card flex="30">
+      <md-tabs>
+        <md-tab label="用户须知">
+          <span>
+
+          </span>
+        </md-tab>
+      </md-tabs>
+    </md-card>
+    <md-card flex="70">
+        <div ng-repeat="card in ctrl.carddata">
+            <md-card>
+                <md-toolbar style="background:url({{card.img}});height:10px">
+                    <div class="md-toolbar-tools">
+                      <h2 flex md-truncate>{{ card.name }}</h2>
+                    </div>
+                  </md-toolbar>
+                  <table style="height:50px">
+                    <tr>
+                      <td>套餐名称</td>
+                      <td>价格</td>
+                      <td>游玩天数</td>
+                      <td>适合人数</td>
+                      <td>游玩区域</td>
+                    </tr>
+                    <tr >
+                      <td>{{card.name}}</td>
+                      <td>{{card.pay}}元</td>
+                      <td>{{card.day}}天数</td>
+                      <td>{{card.number}}人</td>
+                      <td>{{ctrl.changedata(card.url)}}</td>
+                    </tr>
+                  </table>
+              <md-card-actions layout="row" layout-align="end center">
+                <md-button ng-click="ctrl.userchoose(card)" class="md-icon-button">
+                  <img src="http://fangggg.top/svg/ic_add_shopping_cart_black_48dp_2x.png" style="width:24px;color:cadetblue">
+                </md-button>
+              </md-card-actions>
+            </md-card>
+        </div>
+    </md-card>
+  </div>
+</div>

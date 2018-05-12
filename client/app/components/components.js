@@ -10,7 +10,9 @@ import XiamenDetail from './about/xiamen/xiamenDetail/xiamenDetail';
 import Register from './register/register';
 import Pay from './pay/pay';
 import Itemtemplate from './itemtemplate/itemtemplate';
-
+import Rightlist from './rightlist/rightlist';
+import Detiallist from './detaillist/detaillist';
+import Paydetail from './paydetail/paydetail';
 let componentModule = angular.module('app.components', [
   Home,
   About,
@@ -22,7 +24,10 @@ let componentModule = angular.module('app.components', [
   XiamenDetail,
   Register,
   Pay,
-  Itemtemplate
+  Itemtemplate,
+  Rightlist,
+  Detiallist,
+  Paydetail
 ])
 
 .name;

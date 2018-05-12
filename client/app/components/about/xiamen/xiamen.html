@@ -1,16 +1,27 @@
 <navbar></navbar>
 
-<md-tabs>
+<md-tabs md-no-ink md-align-tabs="bottom" md-dynamic-height>
   <md-tab ng-repeat="scen in $ctrl.scenery" label="{{ scen.name }}">
-    <a  ui-sref="xiamendetail({ detailId : scen.id})"><img ng-src="{{scen.img}}"/></a>
-
+    <div align="center">
+    <a ui-sref="xiamendetail({ detailId : scen.id})"><img ng-src="{{scen.img}}" style="height:450px ;width:1200px;border:5px solid white;"></a>
+    </div>
   </md-tab>
 </md-tabs>
+<br>
+<div style="padding:15px">
+    <h1>{{$ctrl.data.name}}</h1>
+</div>
 
-<!-- <a ui-sref="fuzhoudetail({ detailId : })">detail</a> -->
-
-<!-- <md-input-container>
-  <label>Title</label>
-  <input ng-model="$ctrl.title">
-</md-input-container>
-<md-button ng-click="$ctrl.addTab($ctrl.title)">111</md-button> -->
+<hr class="hr1">
+<div style="padding:30px">
+  <span>{{$ctrl.data.his}}</span>
+  <br>
+  <span>{{$ctrl.data.his1}}</span>
+  <br>
+  <span>{{$ctrl.data.his2}}</span>
+</div>
+<br>
+<div style="position: relative;
+    left: 1200px;">
+  <a href="https://zh.wikipedia.org/wiki/%E6%AD%A6%E5%A4%B7%E5%B1%B1%E5%B8%82"><h2>—— 资料来自维基百科</h2></a>
+</div>

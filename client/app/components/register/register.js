@@ -83,7 +83,7 @@ function registerCtrl(toastr,$state){
           name_is:self.name_is,
           password:self.password,
         },
-        head:""
+        head:"http://fangggg.top/Picture/thumbnail/d-1s.jpg"
       }
     }
 

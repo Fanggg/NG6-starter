@@ -1,39 +1,86 @@
-<md-dialog aria-label="Mango (Fruit)">
+<md-dialog aria-label="Mango (Fruit)" style="width:500px">
     <form>
       <md-toolbar>
         <div class="md-toolbar-tools">
           <h2>用户详情</h2>
           <span flex></span>
           <md-button class="md-icon-button" ng-click="ctrl.$mdDialog.cancel()">
-            <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+            <img src="http://fangggg.top/svg/ic_clear_white_48dp_2x.png" style="width:24px">
           </md-button>
         </div>
       </md-toolbar>
-      <md-dialog-content style="max-width:800px;max-height:810px;">
+      <md-dialog-content style="max-width:800px;max-height:810px;" layout="row">
         <br>
-        <md-input-container class="md-block">
-            <label>名称</label>
-            <input ng-model="ctrl.userdata.message.name_is" ng-disabled="true">
-          </md-input-container>
-          <md-input-container class="md-block">
-              <label>账号</label>
-              <input ng-model="ctrl.userdata.message.name" ng-disabled="true">
-            </md-input-container>
+        <div flex="70">
             <md-input-container class="md-block">
-                <label>密码</label>
-                <input ng-model="ctrl.userdata.message.password" ng-disabled="true" type="{{ctrl.type}}">
+                <label>名称</label>
+                <input ng-model="ctrl.userdata.message.name_is" ng-disabled="true">
               </md-input-container>
-              <md-button ng-click="ctrl.showChange()" ng-if="ctrl.userdata.is_admin_user == true">👀</md-button>
               <md-input-container class="md-block">
-                  <label>权限:管理员</label>
-                  <md-switch ng-model="ctrl.userdata.is_admin_user" class="md-primary" ng-disabled="ctrl.userdata.is_superuser == false"></md-switch>
+                  <label>账号</label>
+                  <input ng-model="ctrl.userdata.message.name" ng-disabled="true">
                 </md-input-container>
                 <md-input-container class="md-block">
-                    <label>权限:超级管理员</label>
-                    <md-switch ng-model="ctrl.userdata.is_superuser" class="md-primary" ng-disabled="true">
-                      </md-switch>
-                    <!-- <input ng-model="ctrl.userdata.is_superuser" ng-disabled="true"> -->
+                    <label>密码</label>
+                    <input ng-model="ctrl.userdata.message.password" ng-disabled="true" type="{{ctrl.type}}">
                   </md-input-container>
+                  <md-input-container class="md-block">
+                      <label>权限:管理员</label>
+                      <md-switch ng-model="ctrl.userdata.is_admin_user" class="md-primary" ng-disabled="ctrl.userdata.is_superuser == false"></md-switch>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>权限:超级管理员</label>
+                        <md-switch ng-model="ctrl.userdata.is_superuser" class="md-primary" ng-disabled="true">
+                          </md-switch>
+                        <!-- <input ng-model="ctrl.userdata.is_superuser" ng-disabled="true"> -->
+                      </md-input-container>
+                      <md-button ng-if="ctrl.userdata.is_admin_user == true" ng-click="ctrl.editing = !ctrl.editing" class="md-raised md-primary">管理员添加项</md-button>
+                      <div ng-if="ctrl.editing">
+                          <details>
+                              <summary>添加套餐</summary>
+                              <md-card name="card">
+                                  <md-input-container class="md-block">
+                                      <label>套餐名称</label>
+                                      <input ng-model="ctrl.list.name" required>
+                                    </md-input-container>
+                                    <md-input-container class="md-block">
+                                        <label>套餐价格</label>
+                                        <input ng-model="ctrl.list.pay" required type="number">
+                                      </md-input-container>
+                                      <md-input-container class="md-block">
+                                          <label>套餐人数</label>
+                                          <input ng-model="ctrl.list.number" required type="number">
+                                        </md-input-container>
+                                        <md-input-container class="md-block">
+                                            <label>套餐天数</label>
+                                            <input ng-model="ctrl.list.day" required type="number">
+                                          </md-input-container>
+                                        <md-input-container class="md-block">
+                                            <label>套餐图片链接</label>
+                                            <input ng-model="ctrl.list.img" required>
+                                          </md-input-container>
+                                          <img src="{{ctrl.list.img}}">
+                                          <md-input-container>
+                                              <label>套餐属于区域</label>
+                                              <md-select name="type" ng-model="ctrl.list.url" required>
+                                                <md-option value="wuyishan">武夷山</md-option>
+                                                <md-option value="fuzhou">福州</md-option>
+                                                <md-option value="xiamen">厦门</md-option>
+                                              </md-select>
+                                            </md-input-container>
+                                <md-button class="md-raised md-primary" ng-click="ctrl.addlist()">提交审核</md-button>
+                              </md-card>
+                            </details>
+                      </div>
+        </div>
+                  <div flex="30" style="position: relative;top:165px;">
+                      <md-button ng-click="ctrl.showChange()" class="md-icon-button" ng-if="!ctrl.change">
+                        <img src="http://fangggg.top/svg/ic_visibility_black_48dp_1x.png" style="width:24px">
+                      </md-button>
+                      <md-button ng-click="ctrl.showChange()" class="md-icon-button" ng-if="ctrl.change">
+                          <img src="http://fangggg.top/svg/ic_visibility_off_black_48dp_2x.png" style="width:24px">
+                        </md-button>
+                    </div>
       </md-dialog-content>
 
       <md-dialog-actions layout="row">

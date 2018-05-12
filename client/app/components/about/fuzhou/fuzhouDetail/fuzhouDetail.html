@@ -1,5 +1,5 @@
 <navbar></navbar>
-<div ng-controller="detailCtrl as ctrl" ng-init="ctrl.start">
+<div ng-controller="fuzhoudetailCtrl as ctrl" ng-init="ctrl.start" >
     <form flex="100" layout="column">
         <div>
           <br>
@@ -8,18 +8,29 @@
         </div>
         <div>
           <md-card md-theme-watch>
-            <md-tabs md-align-tabs="bottom" md-no-ink>
-              <md-tab ng-repeat="item in ctrl.scenery" label="{{ item.name }}">
+            <md-tabs md-align-tabs="bottom" md-no-ink md-dynamic-height>
+              <md-tab ng-repeat="item in ctrl.data.img">
+                  <md-tab-label>
+                      <div>
+                          <img src="{{item.tab}}" style="width:50px;height:25px ;border:1px solid white;">
+                      </div>
+                    </md-tab-label>
+                    <md-tab-body>
+                      <div align="center">
+                          <img src="{{item.tab}}" style="height:450px ;border:5px solid white;">
+                      </div>
+                      </md-tab-body>
                 <img src="{{item.img}}" style="height:400px; width:1200px">
               </md-tab>
             </md-tabs>
           </md-card>
         </div>
         <hr class="hr">
-        <div>
-            <h1>{{ ctrl.data.name }}历史</h1>
+        <div style="padding:30px">
+            <h1>{{ ctrl.data.name }}介绍</h1>
             <br>
-            <span>{{ ctrl.data.history }}</span>
+            <hr class="hr1">
+            <span>{{ ctrl.data.introduce }}</span>
         </div>
         <div layout="row">
             <md-card md-theme-watch flex="40">
@@ -28,9 +39,16 @@
                     <h1>联系方式:</h1>
                     <span>{{ ctrl.data.phone }}</span>
                     <h1>用时参考:</h1>
-                    <span>{{ ctrl.data.usedtime}}</span>
+                    <span>{{ ctrl.data.usetime}}</span>
                     <h1>门票:</h1>
-                    <span>门票 {{ ctrl.data.price }} 元</span>
+                    <span> {{ ctrl.data.pay.split('/')[0]}} </span>
+                    <span> {{ ctrl.data.pay.split('/')[1]}} </span>
+                    <span> {{ ctrl.data.pay.split('/')[2]}} </span>
+                    <span> {{ ctrl.data.pay.split('/')[3]}} </span>
+                    <span> {{ ctrl.data.pay.split('/')[4]}} </span>
+                    <span> {{ ctrl.data.pay.split('/')[5]}} </span>
+                    <span> {{ ctrl.data.pay.split('/')[6]}} </span>
+
                   </md-card-title-text>
                   <md-card-title-media>
                     <span>{{ ctrl.data.main}}</span>
@@ -38,16 +56,26 @@
                   </md-card-title-media>
                 </md-card-title>
                 <md-card-actions layout="row" layout-align="end center">
-                  <md-button>Action 1</md-button>
-                  <md-button>Action 2</md-button>
                 </md-card-actions>
               </md-card>
               <md-card md-theme-watch flex="60">
                   <md-card-title>
                     <md-card-title-text>
                       <h1>推荐出行方式</h1>
-                      <span>{{ ctrl.data.goway }}</span>
-                      <span>{{ ctrl.data.goway? ctrl.data.goway.bus : ""}}</span>
+                      <span>{{ ctrl.data.bus.split('/')[0] }}</span>
+                      <br>
+                      <span>{{ ctrl.data.bus.split('/')[1] }}</span>
+                      <br>
+                      <span>{{ ctrl.data.bus.split('/')[2] }}</span>
+                      <br>
+                      <span>{{ ctrl.data.bus.split('/')[3] }}</span>
+                      <br>
+                      <span>{{ ctrl.data.bus.split('/')[4] }}</span>
+                      <br>
+                      <span>{{ ctrl.data.bus.split('/')[5] }}</span>
+                      <br>
+                      <span>{{ ctrl.data.bus.split('/')[6] }}</span>
+
                     </md-card-title-text>
                     <md-card-title-media>
                         <!-- <div ng-mouseleave="start()">
@@ -70,7 +98,14 @@
                   </md-card-title>
                 </md-card>
         </div>
-
+        <div>
+          <div flex="40"></div>
+          <div flex="60">
+            <md-card>
+              <detaillist></detaillist>
+            </md-card>
+          </div>
+        </div>
       </form>
 </div>
 

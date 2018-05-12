@@ -1,27 +1,35 @@
-<md-dialog aria-label="Mango (Fruit)">
+<md-dialog aria-label="Mango (Fruit)" style="width:300px;">
     <form>
       <md-toolbar>
         <div class="md-toolbar-tools" style="background:forestgreen">
           <h2>登入</h2>
           <span flex></span>
           <md-button class="md-icon-button" ng-click="ctrl.$mdDialog.cancel()">
-            <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+            <img src="http://fangggg.top/svg/ic_clear_white_48dp_2x.png" style="width:24px">
           </md-button>
         </div>
       </md-toolbar>
-      <md-dialog-content style="max-width:800px;max-height:810px;">
+      <md-dialog-content style="max-width:800px;max-height:810px;" layout="row">
         <br>
-          <md-input-container class="md-block">
-              <label>账号</label>
-              <input ng-model="ctrl.name">
-            </md-input-container>
-            <md-input-container class="md-block">
-                <label>密码</label>
-                <input ng-model="ctrl.password" ng-keyup="ctrl.keyup($event)" type="{{ctrl.type}}">
-              </md-input-container>
+        <div flex="70">
+                  <md-input-container class="md-block">
+                    <label>账号</label>
+                    <input ng-model="ctrl.name">
+                  </md-input-container>
+                  <md-input-container class="md-block">
+                      <label>密码</label>
+                      <input ng-model="ctrl.password" ng-keyup="ctrl.keyup($event)" type="{{ctrl.type}}">
+                    </md-input-container>
+        </div>
+        <div flex="30" style="position: relative;top:95px;">
+          <md-button ng-click="ctrl.showChange()" class="md-icon-button" ng-if="!ctrl.change">
+            <img src="http://fangggg.top/svg/ic_visibility_black_48dp_1x.png" style="width:24px">
+          </md-button>
+          <md-button ng-click="ctrl.showChange()" class="md-icon-button" ng-if="ctrl.change">
+              <img src="http://fangggg.top/svg/ic_visibility_off_black_48dp_2x.png" style="width:24px">
+            </md-button>
+        </div>
       </md-dialog-content>
-      <md-button ng-click="ctrl.showChange()">显示眼镜</md-button>
-
       <md-dialog-actions layout="row">
         <span flex></span>
         <md-button ng-click="ctrl.confirm()" style="margin-right:20px;" >

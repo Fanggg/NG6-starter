@@ -1,6 +1,14 @@
+'use strict';
+
 class AboutController {
-  constructor() {
+
+  constructor($scope) {
+    "ngInject";
+
     this.name = 'about';
+
+
+
   }
 }
 
