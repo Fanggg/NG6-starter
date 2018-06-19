@@ -13,7 +13,7 @@ let navbarModule = angular.module('navbar', [
 .name;
 
 
-function navbarCtrl($mdDialog,toastr){
+function navbarCtrl($mdDialog,toastr,$state){
   'ngInject';
  var self = this;
  self.user = JSON.parse(localStorage.getItem("user"));
@@ -22,6 +22,7 @@ function navbarCtrl($mdDialog,toastr){
  self.enter = enter
  self.userDatail = userDatail
  self.state;
+ self.a;
  self.organizations = [
   {
     region: '福建',
@@ -61,9 +62,8 @@ function navbarCtrl($mdDialog,toastr){
       {
         name: '泉州',
         reports: [
-          {name: 'Bob'},
-          {name: 'Sandra'},
-          {name: 'Juan'}
+          {name: '暂无数据'},
+
         ]
       }
     ]
@@ -72,20 +72,7 @@ function navbarCtrl($mdDialog,toastr){
     region: '浙江',
     managers: [
       {
-        name: 'Janet',
-        reports: [
-          {name: 'Betty'},
-          {name: 'Corrie'},
-          {name: 'Carlos'}
-        ]
-      },
-      {
-        name: 'Randy',
-        reports: [
-          {name: 'Julia'},
-          {name: 'Matt'},
-          {name: 'Kara'}
-        ]
+        name: '暂无数据',
       }
     ]
   },
@@ -93,21 +80,8 @@ function navbarCtrl($mdDialog,toastr){
     region: '四川',
     managers: [
       {
-        name: 'Peggy',
-        reports: [
-          {name: 'Dwight'},
-          {name: 'Pam'},
-          {name: 'Jeremy'}
-        ]
+        name: '暂无数据',
       },
-      {
-        name: 'Andrew',
-        reports: [
-          {name: 'Stephen'},
-          {name: 'Naomi'},
-          {name: 'Erin'}
-        ]
-      }
     ]
   }
 ];
@@ -142,7 +116,8 @@ function navbarCtrl($mdDialog,toastr){
       controllerAs: "ctrl",
       locals: {
         $mdDialog:$mdDialog,
-        toastr:toastr
+        toastr:toastr,
+        $state:$state
       }
     })
     .then((e) => {
@@ -151,8 +126,9 @@ function navbarCtrl($mdDialog,toastr){
   }
 
   function searchchoose(){
-    let a = localStorage.getItem("mainstates");
-    if (a == 'about'){
+    self.a = JSON.parse(localStorage.getItem("mainstates"));
+
+    if (self.a == 'about'){
 
       self.state = false
       localStorage.removeItem("mainstates")

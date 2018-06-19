@@ -1,12 +1,17 @@
 <nav class="navbar">
   <div flex="100" layout="row" ng-controller="navbarCtrl as ctrl">
       <div class="logo" flex="10">
-          <a ui-sref="home"><img src="http://fangggg.top/Picture/head.png" style="width:120px"></a>
+          <a ui-sref="home">
+              <md-tooltip md-direction="right">返回主页</md-tooltip>
+            <img src="http://fangggg.top/Picture/head.png" style="width:120px"></a>
         </div>
         <div ng-if="!ctrl.user" flex="10">
-            <a href=""  ng-click="ctrl.enter()"><img src="http://img.jf258.com/uploads/2014-09-25/082207464.jpg" style="border-radius: 50% ;width: 40px"></a>
+            <a href=""  ng-click="ctrl.enter()">
+                <md-tooltip md-direction="left">登入用户</md-tooltip>
+              <img src="http://img.jf258.com/uploads/2014-09-25/082207464.jpg" style="border-radius: 50% ;width: 40px"></a>
         </div>
         <div ng-if="ctrl.user" flex="10">
+            <md-tooltip md-direction="left">用户详情</md-tooltip>
             <a href=""  ng-click="ctrl.userDatail()"><img src="{{ctrl.user.head}}" style="border-radius: 50% ;width: 40px;height:40px"></a>
             <!-- <span>{{ctrl.user.message.name_is}}</span> -->
         </div>
@@ -43,26 +48,7 @@
                       </md-menu-item>
                     </md-menu-content>
                   </md-menu>
-                  <!-- <md-menu>
-                      <md-button aria-label="Open menu" ng-click="$mdMenu.open($event)" class="title-head">
-                        出行方式
-                      </md-button>
-                      <md-menu-content width="3">
-                        <md-menu-item>
-                            <md-button>陆行</md-button>
-                        </md-menu-item>
-                        <md-menu-item>
-                            <md-menu>
-                              <md-button ng-disabled="true">空运</md-button>
-                            </md-menu>
-                          </md-menu-item>
-                          <md-menu-item>
-                              <md-menu>
-                                <md-button ng-disabled="true">海运</md-button>
-                              </md-menu>
-                            </md-menu-item>
-                      </md-menu-content>
-                  </md-menu> -->
+
                 </md-menu-bar>
           </span>
 

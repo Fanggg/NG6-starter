@@ -8,25 +8,35 @@ let rightlistModule = angular.module('rightlist', [
 
 .component('rightlist', rightlistComponent)
 .controller('rightlistCtrl',rightlistCtrl)
+.config(($stateProvider) => {
+  "ngInject";
+  $stateProvider
+    .state('rightlist', {
+      url: '/rightlist',
+      component: 'rightlist'
+    });
+})
 .name;
+
+
 
 function rightlistCtrl($state) {
   'ngInject';
 
   var self = this;
-  self.list = [{name:"武夷山双人三日游",url:"wuyishan"},{name:"1",id:"1"},{name:"1"},{name:"1"},{name:"1"},{name:"1"}]
-  self.checkDetail = checkDetail;
-
-  function checkDetail(item){
-    console.log(item)
-    if(item.id){
-      console.log(item.id)
-    }else{
-      console.log(333)
-      $state.go(item.url)
+  self.list = JSON.parse(localStorage.getItem("order"))
+  self.changedata = changedata;
+  console.log(self.list)
+  function changedata(e){
+    if(e == "fuzhou"){
+      return "福州"
     }
-
-    localStorage.setItem("listdata",JSON.stringify(self.list))
+    if(e == "xiamen"){
+      return "厦门"
+    }
+    if(e == "wuyishan"){
+      return "武夷山"
+    }
   }
 }
 

@@ -16,6 +16,7 @@ export class payCtrl{
     this.$mdDialog = $mdDialog;
     this.toastr = toastr;
     this.finish = true;
+    this.paydata = true;
     this.orderlist = []
     this.data = JSON.parse(localStorage.getItem("userInformation"))
     // this.userdata = JSON.parse(localStorage.getItem("user"))
@@ -30,8 +31,10 @@ export class payCtrl{
     let order = {
       data:this.data,
       orderid:this.orderid,
-      creattime:this.creattime
+      creattime:this.creattime,
+      finish:false
     }
+
     localStorage.setItem("order",JSON.stringify(order))
     this.toastr.success("确认并完成支付成功")
     this.toastr.success("详细信息在用户详情查看")

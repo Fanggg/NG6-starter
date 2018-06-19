@@ -22,6 +22,8 @@
     "angular-ui-carousel": "^0.1.10",
     "angular-ui-router": "^1.0.0-beta.1",
     "bootstrap": "^4.1.0",
+    "highcharts": "^6.1.0",
+    "highcharts-ng": "^1.2.0",
     "jquery": "^3.3.1",
     "material-design-icons": "^3.0.1",
     "ngx-banner-carousel-moby": "^1.0.3",

@@ -4,6 +4,8 @@ import 'angular-aria';
 import 'angular-messages';
 import 'angular-animate';
 import 'angular-toastr';
+import 'highcharts';
+import '../../node_modules/highcharts-ng/dist/highcharts-ng';
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import Common from './common/common';
@@ -21,6 +23,7 @@ import 'angular-material-data-table';
 
 
 
+
 angular.module('app', [
     'ngAria',
     'ngAnimate',
@@ -32,6 +35,7 @@ angular.module('app', [
     'ngSanitize',
     'ui.bootstrap',
     'md.data.table',
+    'highcharts-ng',
     uiRouter,
     Common,
     Components,

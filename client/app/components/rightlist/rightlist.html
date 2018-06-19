@@ -1,13 +1,81 @@
-<div ng-controller="rightlistCtrl as ctrl">
-        <md-list flex>
-        <md-subheader class="md-no-sticky">最近三周</md-subheader>
-        <md-list-item class="md-3-line" ng-repeat="list in ctrl.list" ng-click="ctrl.checkDetail(list)">
-          <img ng-src="{{list.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />
-          <div class="md-list-item-text" layout="column">
-            <h3>{{ list.name }}</h3>
-            <h4>{{ list.name }}</h4>
-            <p>{{ list.name }}</p>
+<navbar></navbar>
+<div ng-controller="rightlistCtrl as ctrl" >
+<div style="position: relative;left: 20%;">
+  <md-card style="width:800px">
+    <md-toolbar style="background:darkgreen;height:10px">
+      <div class="md-toolbar-tools" layout="row">
+        <h2 flex="30" md-truncate>订单号:{{ ctrl.list.orderid }}</h2>
+        <div style="width:50px;height:25px;background:slategrey;border-radius: 30px">
+            <h5 style="font-size:30%;position: relative;bottom: 16px;left:5px;">已付款</h5>
+        </div>
+
+        </div>
+        </md-toolbar>
+        <div layout="row" style="padding:10px">
+            <p style="color:darkgray">创建时间:</p>
+            <p style="color:darkgray;position: relative;top: 2px;">{{ctrl.list.creattime}}</p>
           </div>
-        </md-list-item>
-        </md-list>
+          <div layout="row" style="padding:10px">
+              <p style="color:darkgray">实付金额:</p>
+              <p style="color:darkgray;position: relative;">{{ctrl.list.data.chooselist.pay}}元</p>
+            </div>
+          <br>
+          <hr class="hr1">
+          <md-card>
+            <h1 style="padding:5px">订单账号</h1>
+            <div layout="row" style="padding:5px">
+                <md-input-container class="md-block">
+                    <label>账号</label>
+                <input ng-model="ctrl.list.data.user.message.name" type="text" ng-disabled="true">
+              </md-input-container>
+              <md-input-container class="md-block">
+                  <label>用户名</label>
+              <input ng-model="ctrl.list.data.user.message.name_is" type="text" ng-disabled="true">
+            </md-input-container>
+            </div>
+          </md-card>
+          <md-card>
+            <h1 style="padding:5px">订单用户</h1>
+            <div layout="row" style="padding:5px">
+              <md-input-container class="md-block">
+                <label>姓名</label>
+                <input ng-model="ctrl.list.data.name_is" type="text" ng-disabled="true">
+              </md-input-container>
+              <md-input-container class="md-block">
+                  <label>联系方式</label>
+                  <input ng-model="ctrl.list.data.phone" type="text" ng-disabled="true">
+                </md-input-container>
+            </div>
+            <md-input-container class="md-block">
+                <label>身份证号</label>
+                <input ng-model="ctrl.list.data.idcard" type="text" ng-disabled="true">
+              </md-input-container>
+              <md-input-container class="md-block">
+                  <label>入住日期</label>
+                  <input ng-model="ctrl.list.data.intime" type="text" ng-disabled="true">
+                </md-input-container>
+          </md-card>
+          <md-card>
+              <h1 style="padding:5px">订单套餐:</h1>
+              <table style="height:50px">
+                  <tr>
+                    <td>套餐名称</td>
+                    <td>价格</td>
+                    <td>游玩天数</td>
+                    <td>适合人数</td>
+                    <td>游玩区域</td>
+                  </tr>
+                  <tr>
+                    <td>{{ctrl.list.data.chooselist.name}}</td>
+                    <td>{{ctrl.list.data.chooselist.pay}}元</td>
+                    <td>{{ctrl.list.data.chooselist.day}}天</td>
+                    <td>{{ctrl.list.data.chooselist.number}}人</td>
+                    <td>{{ctrl.changedata(ctrl.list.data.chooselist.url)}}</td>
+                  </tr>
+                </table>
+          </md-card>
+
+  </md-card>
+</div>
+
 </div>

@@ -109,12 +109,8 @@ function searchCtrl ($timeout, $q, $log ,$state,toastr) {
    */
   function loadAll() {
     var allStates = '福州, 武夷山, 厦门, 林则徐纪念馆, 三坊七巷, 于山风景区, 五一广场, 鼓山风景区,\
-            大王峰, 武夷宫, 玉女峰, 大红袍景区, 虎啸岩, 鼓浪屿, 厦门大学, 中山路步行街, 集美大学, Louisiana,\
-            Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
-            Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina,\
-            North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
-            South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
-            Wisconsin, Wyoming';
+            大王峰, 武夷宫, 玉女峰, 大红袍景区, 虎啸岩, 鼓浪屿, 厦门大学, 中山路步行街, 集美大学\
+           ';
 
     return allStates.split(/, +/g).map( function (state) {
 

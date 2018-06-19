@@ -39,6 +39,7 @@ self.list = [{name:"武夷山双人三日游",url:"wuyishan",pay:532,number:2,da
               list:self.list
               }
   startData();
+  pushstates();
 
   function startData(){
     if(localStorage.getItem("data")){
@@ -49,6 +50,12 @@ self.list = [{name:"武夷山双人三日游",url:"wuyishan",pay:532,number:2,da
       localStorage.setItem("data",JSON.stringify(data));
     }
 
+  }
+
+  function pushstates(){
+    let a = 'about'
+
+    localStorage.setItem("mainstates",JSON.stringify(a))
   }
 }
 

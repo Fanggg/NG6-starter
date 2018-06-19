@@ -28,6 +28,7 @@ function detaillistCtrl($state,$mdDialog,toastr){
 
   function refresh(){
     self.userdatas = JSON.parse(localStorage.getItem("user"))
+    self.list = JSON.parse(localStorage.getItem("data")).list
     toastr.success("列表刷新成功")
 
   }
